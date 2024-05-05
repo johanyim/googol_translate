@@ -15,18 +15,20 @@
                 <div class="left">English</div>
                 <div class="right">
                     <select id="voice" name="voice">
-                       <option value="caveman">Caveman</option>
+                       <option value="Caveman">Caveman</option>
                        <option value="5 year old">5 year old</option> 
-                       <option value="dr. Seuss">Dr. Seuss</option> 
-                       <option value="gladiator">Gladiator</option> 
-                       <option value="graduate">Graduate</option> 
-                       <option value="posh gentleman">Posh</option> 
+                       <option value="Dr. Seuss">Dr. Seuss</option> 
+                       <option value="Gladiator">Gladiator</option> 
+                       <option value="Posh gentleman">Posh</option> 
+                       <option value="Gen Z">Gen Z</option> 
+                       <option value="Summarized">Summarized</option> 
+                       <option value="Long and convoluted">Convoluted</option> 
                     </select>
                 </div>
             </div>
 
 
-            <!-- hx-post="https://32fjq3kkib.execute-api.eu-west-2.amazonaws.com/dev/translate/" -->
+                        <!-- hx-post="http://api.googoltranslate.com/translator" -->
             <div id="content" >
                 <div class="left text-area-container">
                     <textarea id="input" 
@@ -35,28 +37,27 @@
                             this.style.height = 
                             this.scrollHeight + "px"' 
                         autofocus="true"
-                        hx-post="https://kdyg2j4409.execute-api.eu-west-2.amazonaws.com/dev/translator"
+                        hx-post="https://kdyg2j4409.execute-api.eu-west-2.amazonaws.com/release/translator"
                         hx-headers='{
                             "Accept": "text/html",
                             "Content-Type": "application/json",
                             "Access-Control-Allow-Origin": "*",
-                            "Access-Control-Allow-Methods": "GET,POST,PATCH,OPTIONS"
+                            "Access-Control-Allow-Methods": "POST,OPTIONS"
                         }'
-                        hx-trigger="input changed delay:500ms"
+                        hx-trigger="input changed delay:1000ms, input changed delay:1000ms from:select#voice"
                         hx-target="#output"
                         hx-swap="innerHTML"
                         hx-include="#voice"
                         hx-ext="json-enc";
                         hx-indicator="#loading-indicator"
                         ></textarea>
-
                 </div>
 
                 <div class="right text-area-container">
+                    <span id="output"></span>
                     <img id="loading-indicator" 
                     class="htmx-indicator" 
                     src="./loading.svg"/>
-                    <div id="output" disabled></div>
                 </div>
             </div>
 
