@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title></title>
+        <link href="./style.css" rel="stylesheet">
+        <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+        <script src="https://unpkg.com/htmx.org/dist/ext/json-enc.js"></script>
+    </head>
+    <body>
+        <h1>Googol Translate</h1> 
+        <div id="container">
+            <div id="options">
+                <div class="left">English</div>
+                <div class="right">
+                    <select id="voice" name="voice">
+                       <option value="5 year old">5 year old</option> 
+                       <option value="dr. Seuss">Dr. Seuss</option> 
+                       <option value="gladiator">Gladiator</option> 
+                       <option value="graduate">Graduate</option> 
+                       <option value="posh gentleman">Posh</option> 
+                       <option value="caveman">Caveman</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <!-- hx-post="https://32fjq3kkib.execute-api.eu-west-2.amazonaws.com/dev/translate/" -->
+            <div id="content" >
+                <div class="left text-area-container">
+                    <textarea id="input" 
+                        name="text"
+                        oninput='this.style.height = "";
+                            this.style.height = 
+                            this.scrollHeight + "px"' 
+                        autofocus="true"
+                        hx-post="https://kdyg2j4409.execute-api.eu-west-2.amazonaws.com/dev/translator"
+                        hx-headers='{
+                            "Accept": "text/html",
+                            "Content-Type": "application/json",
+                            "Access-Control-Allow-Origin": "*",
+                            "Access-Control-Allow-Methods": "GET,POST,PATCH,OPTIONS"
+                        }'
+                        hx-trigger="input changed delay:500ms"
+                        hx-target="#output"
+                        hx-swap="innerHTML"
+                        hx-include="#voice"
+                        hx-ext="json-enc";
+
+                        ></textarea>
+
+                </div>
+
+                <div class="right text-area-container">
+                    <textarea id="output" 
+                        oninput='this.style.height = "";
+                            this.style.height = 
+                            this.scrollHeight + "px"' 
+                        disabled></textarea>
+                </div>
+            </div>
+
+
+        </div>
+    </body>
+</html>

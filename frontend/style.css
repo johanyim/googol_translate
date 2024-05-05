@@ -1,0 +1,85 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+h1 {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+body {
+  background: white;
+}
+
+#container {
+  max-width: 80rem;
+  margin: auto;
+}
+
+#options {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-around;
+  color: #1a73e8;
+  margin-bottom: 1rem;
+}
+#options * {
+  text-align: center;
+  font-weight: bold;
+}
+
+#options .right select {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  color: #1a73e8;
+}
+#options .right select option {
+  color: #1a73e8;
+}
+
+#content {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+#content * {
+  flex: 1 0 20rem;
+}
+
+.text-area-container {
+  padding: 1rem;
+}
+.text-area-container.right {
+  border: 1px solid #e0e0e0;
+  border-radius: 0.5rem;
+}
+.text-area-container.left {
+  background: #f5f5f5;
+  border-radius: 0.5rem;
+}
+
+textarea {
+  width: 100%;
+  resize: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  font-family: sans-serif;
+}
+textarea:focus {
+  outline: none !important;
+}
+
+/*# sourceMappingURL=style.css.map */

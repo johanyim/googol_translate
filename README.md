@@ -1,1 +1,0 @@
-# googol_translate
