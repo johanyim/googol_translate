@@ -12,5 +12,9 @@ This is a full stack web application which imitates the lesser-known competitor 
 
 
 ## Technologies used
-#### Frontend
-HTMX
+Frontend: Sass, HTML, HTMX
+
+Backend: Rust
+
+Deployment: AWS, Lambda
+

@@ -24,7 +24,7 @@ async fn function_handler(req: Request) -> Result<Response<Body>, Error> {
     let TranslationRequest { text, voice } = serde_json::from_slice(&body)?;
     println!("[DESERIALIZED]: \n text: {text}, voice: {voice}.");
 
-    let message = ai_translate(text, voice);
+    let message = ai_translate(&text, voice).unwrap_or(text);
 
     let resp = Response::builder()
         .status(200)

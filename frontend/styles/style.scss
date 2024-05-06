@@ -18,6 +18,10 @@ h1 {
     margin-bottom: 2rem;
 }
 
+
+html {
+}
+
 body {
     background: $bg1;
 }
@@ -56,10 +60,6 @@ body {
     }
 }
 
-
-
-
-
 #content {
     display: flex;
     gap: 1rem;
@@ -67,8 +67,9 @@ body {
     * {
         flex: 1 0 20rem;
     }
-}
 
+    height: fit-content;
+}
 
 .text-area-container {
     padding: 1rem;
@@ -82,9 +83,9 @@ body {
     }
 }
 
-
-textarea {
+textarea, #output {
     width: 100%;
+    min-height: 5rem;
     resize: none;
     font-size: 2rem;
     background: none;
@@ -94,3 +95,12 @@ textarea {
         outline: none !important;
     }
 }
+
+
+#loading-indicator {
+    position: absolute;
+    display: block;
+    height: 8rem;
+    z-index: -1; 
+}
+
