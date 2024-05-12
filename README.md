@@ -1,22 +1,38 @@
 # Googol Translate
 ![grugtranslate_smaller](https://github.com/johanyim/googol_translate/assets/37012949/6e398e76-1323-4f89-a919-fe7c756e5312)
 
-
-## Try it yourself
-
-[Googol Translate](http://googoltranslate.com) 
-
-
-## What is Googol Translate
+## What is Googol Translate?
 
 This is a full stack web application which imitates the lesser-known competitor application, [Google Translate](https://translate.google.com/). 
 
+## Try it yourself
 
+#### Website: [`googoltranslate.com`](http://googoltranslate.com) 
+#### API endpoint: [`api.googoltranslate.com/translate`](https://api.googoltranslate.com) 
+
+## Example usage
+
+`json` Payload
+```json
+{
+    "text": "We are just an advanced breed of monkeys on a minor planet of a very average star. But we can understand the Universe. That makes us something very special.",
+    "voice": "Caveman"
+}
+```
+
+With `cURL`
+```bash
+foo@bar:~$ curl -X POST -d '{
+    "text": "We are just an advanced breed of monkeys on a minor planet of a very average star. But we can understand the Universe. That makes us something very special.",
+    "voice": "Caveman"
+}' \
+-X POST \
+https://api.googoltranslate.com/translate
+```
 
 ## Technologies used
-Frontend: Sass, HTML, HTMX
+#### Frontend: `HTMX`, `HTML`, `Sass`
 
-Backend: Rust
+#### Backend: `Rust`, `Cargo Lambda`, 
 
-Deployment: AWS, Lambda
-
+#### Deployment: `AWS`, `Lambda`, `API Gateway`, `EC2`, `Route53`, `ACM`, `GitHub Workflows`
