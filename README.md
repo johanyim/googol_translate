@@ -3,7 +3,13 @@
 
 ## What is Googol Translate?
 
-This is a full stack web application which imitates the lesser-known competitor application, [Google Translate](https://translate.google.com/). 
+This is a full stack web application which imitates the lesser-known competitor application, [Google Translate](https://translate.google.com/). You can use the API endpoint to generate your own translations. 
+
+The translation results are **deterministic**, like a real translation dictionary. The same inputs will result in the same outputs[^1].
+
+[^1]: Results can vary between different releases
+
+Note: For purposes of operating with HTMX, the response is plain text, with formatted HTML hypermedia on errors.
 
 ## Try it yourself
 
@@ -22,13 +28,20 @@ This is a full stack web application which imitates the lesser-known competitor 
 
 With `cURL`
 ```bash
-foo@bar:~$ curl -X POST -d '{
+foo@bar:~$ curl -X POST -d \
+'{
     "text": "We are just an advanced breed of monkeys on a minor planet of a very average star. But we can understand the Universe. That makes us something very special.",
     "voice": "Caveman"
 }' \
--X POST \
-https://api.googoltranslate.com/translate
+-X POST "https://api.googoltranslate.com/translator"
 ```
+
+```
+We advanced monkey type on small rock of normal fire ball. But we know big everything. That make us very special
+```
+
+## Funny results 
+
 
 ## Technologies used
 #### Frontend: `HTMX`, `HTML`, `Sass`
