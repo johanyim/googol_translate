@@ -46,6 +46,7 @@ pub fn ai_translate(text: &str, voice: &str) -> Result<String, error::Translatio
         ],
     )
     .temperature(0.0) // for deterministic language 1-1 translation
+    .top_p(0.0)
     .seed(0)
     .max_tokens(MAX_TOKEN_COUNT);
 
