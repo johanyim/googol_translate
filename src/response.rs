@@ -3,7 +3,9 @@ use lambda_http::{Body, Response};
 
 // WARN: Do not use reqwest crate StatusCode. See Cargo.toml
 const STATUS_OK: u16 = 200;
-const DOMAIN_URL: &str = "http://googoltranslate.com";
+// const DOMAIN_URL: &str = "http://googoltranslate.com";
+// const DOMAIN_URL: &str = "http://api.googoltranslate.com";
+const DOMAIN_URL: &str = "*";
 const MAX_AGE: u32 = 86400;
 
 pub fn response_wrap(message: String) -> Response<Body> {
