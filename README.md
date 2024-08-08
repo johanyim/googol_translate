@@ -1,5 +1,5 @@
-# Googol Translate
-![grugtranslate_smaller](https://github.com/johanyim/googol_translate/assets/37012949/6e398e76-1323-4f89-a919-fe7c756e5312)
+# [`Google Translate`](http://googoltranslate.com)
+[![grugtranslate_smaller](https://github.com/johanyim/googol_translate/assets/37012949/6e398e76-1323-4f89-a919-fe7c756e5312)](http://googoltranslate.com)
 
 ## What is Googol Translate?
 
